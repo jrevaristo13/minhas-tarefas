@@ -1,12 +1,12 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import Login from './pages/Login';
-import Cadastro from './pages/Cadastro';
-import NovaTarefa from './pages/NovaTarefa';
-import ProtectedRoute from './components/ProtectedRoute';
-import TarefasApp from './TarefasApp';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
+import Login from './pages/Login'
+import Cadastro from './pages/Cadastro'
+import NovaTarefa from './pages/NovaTarefa'
+import ProtectedRoute from './components/ProtectedRoute'
+import TarefasApp from './TarefasApp'
+import './App.css'
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
             </ProtectedRoute>
           } />
 
-          {/* ✅ Rota para EDITAR (Onde a mágica acontece) */}
+          {/* Rota para EDITAR */}
           <Route path="/editar-tarefa/:id" element={
             <ProtectedRoute>
               <NovaTarefa />
@@ -41,7 +41,7 @@ function App() {
         </Routes>
       </AuthProvider>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
