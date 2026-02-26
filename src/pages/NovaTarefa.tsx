@@ -5,7 +5,8 @@ import { useAuth } from '../context/AuthContext'
 const NovaTarefa: React.FC = () => {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const { user } = useAuth()
+  // Removi o "const { user } = " para evitar o erro de variável não utilizada no build da Vercel
+  useAuth() 
 
   const [titulo, setTitulo] = useState('')
   const [descricao, setDescricao] = useState('')
